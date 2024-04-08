@@ -2,36 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");.wallet-adapter-button {
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+.wallet-adapter-button {
   background-color: transparent;
   border: none;
   color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
-  font-family: DM Sans,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: DM Sans, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   height: 48px;
   line-height: 48px;
   padding: 0 24px;
-  border-radius: 4px
+  border-radius: 4px;
 }
 
 @font-face {
   font-family: ChicagoFLF;
-  src: url(/ChicagoFLF.ttf) format("truetype");
+  src: url(/ChicagoFLF.ttf) format('truetype');
   font-weight: 400;
-  font-style: normal
+  font-style: normal;
 }
 
 html,
 body {
   height: 100%;
-  font-family: "ChicagoFLF";
+  font-family: 'ChicagoFLF';
   margin: 0;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .wallet-adapter-button-trigger {
@@ -45,4 +46,22 @@ body {
 .wallet-adapter-dropdown-list,
 .wallet-adapter-button {
   font-family: inherit !important;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 290%;
+  left: 50%;
+  margin-left: -60px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

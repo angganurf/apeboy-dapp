@@ -1,11 +1,20 @@
 'use client';
 
+import { useWallet } from '@solana/wallet-adapter-react';
+import { WalletButton } from '../solana/solana-provider';
+
+import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import TitleBar from '../TitleBar';
-import { WalletButton } from '../solana/solana-provider';
 import { AppHero } from '../ui/ui-layout';
 
-export default function DashboardFeature() {
+export default function DashboardListFeature() {
+  const { publicKey } = useWallet();
+
+  if (publicKey) {
+    return redirect(`${publicKey.toString()}`);
+  }
+
   return (
     <div>
       <AppHero title="gm" subtitle="Say hi to your new Solana dApp." />
@@ -26,7 +35,7 @@ export default function DashboardFeature() {
                   className="text-white bg-black px-2 my-1"
                   href={'/leaderboard'}
                 >
-                  presale leaderboard
+                  presale leaderboards
                 </Link>
                 <WalletButton className="bg-white text-black" />
               </div>

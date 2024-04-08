@@ -25,6 +25,11 @@ export enum ClusterNetwork {
 // To use the mainnet-beta cluster, provide a custom endpoint
 export const defaultClusters: Cluster[] = [
   {
+    name: 'mainnet',
+    endpoint: "https://omniscient-capable-shadow.solana-mainnet.quiknode.pro/18ab434315e42101fd57b905b1a5aeda4e8f7a8d/",
+    network: ClusterNetwork.Mainnet,
+  },
+  {
     name: 'devnet',
     endpoint: clusterApiUrl('devnet'),
     network: ClusterNetwork.Devnet,

@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { AccountChecker } from '../account/account-ui';
+
 import {
   ClusterChecker,
   ClusterUiSelect,
@@ -23,23 +24,39 @@ export function UiLayout({
   links: { label: string; path: string }[];
 }) {
   const pathname = usePathname();
+  const allocationPagePath = '/allocation';
+
+  const isOnAllocationPage = pathname === allocationPagePath;
 
   return (
     <div className="h-full flex flex-col">
-      <header className='absolute top-0 w-full bg-black flex flex-row border-b-2 border-black'>
-        <div className='relative w-full h-auto py-0.5 rounded-t-xl bg-white'>
-         {links.map(({ label, path }) => (
-                <Link
-                  key={path}
-                  className="my-1 ml-5 text-black bg-white hover:bg-black hover:text-white"
-                  href={path}
-                >
-                  {label}
-                </Link>
-  
-            ))}
-        </div>    
-
+      <header className="absolute top-0 w-full bg-black flex flex-row border-b-2 border-black">
+        <div className="relative w-full h-auto py-0.5 rounded-t-xl bg-white">
+          {links.map(({ label, path }) => (
+            <Link
+              key={path}
+              className="my-1 ml-5 text-black bg-white hover:bg-black hover:text-white"
+              href={path}
+            >
+              {label}
+            </Link>
+          ))}
+          {isOnAllocationPage ? (
+            <Link
+              className="my-1 ml-5 text-black bg-white hover:bg-black hover:text-white"
+              href={'/'}
+            >
+              {'<-Back'}
+            </Link>
+          ) : (
+            <Link
+              className="my-1 ml-5 text-black bg-white hover:bg-black hover:text-white"
+              href={'/allocation'}
+            >
+              allocation
+            </Link>
+          )}
+        </div>
       </header>
       {/* <div className="navbar bg-base-300 text-neutral-content flex-col md:flex-row space-y-2 md:space-y-0">
         <div className="flex-1">
@@ -71,6 +88,7 @@ export function UiLayout({
       <ClusterChecker>
         <AccountChecker />
       </ClusterChecker> */}
+
       <div className="flex-grow mx-4 lg:mx-auto">
         <Suspense
           fallback={
