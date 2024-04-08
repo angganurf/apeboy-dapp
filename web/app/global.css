@@ -2,14 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");.wallet-adapter-button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: DM Sans,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 24px;
+  border-radius: 4px
+}
+
+@font-face {
+  font-family: ChicagoFLF;
+  src: url(/ChicagoFLF.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal
+}
+
 html,
 body {
   height: 100%;
+  font-family: "ChicagoFLF";
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
 }
 
 .wallet-adapter-button-trigger {
-  background: rgb(100, 26, 230) !important;
-  border-radius: 8px !important;
+  background: rgb(247, 247, 247) !important;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px !important;
   padding-left: 16px !important;
   padding-right: 16px !important;
 }

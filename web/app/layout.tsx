@@ -11,8 +11,10 @@ export const metadata = {
 
 const links: { label: string; path: string }[] = [
   { label: 'Account', path: '/account' },
-  { label: 'Clusters', path: '/clusters' },
-  { label: 'Apeboy Program', path: '/apeboy' },
+  { label: '$apeboy', path: 'https://solscan.io/token/Gz8758urhVJfaZFbuGy2rgYSxbkf6qFUodEk9eY9SgUa' },
+  { label: 'twitter', path: 'https://x.com/apeboyclub' },
+  { label: 'tg', path: 'https://t.me/apeboycommunity' },
+  { label: 'wp', path: 'https://docs.apeboysclub.site' },
 ];
 
 export default function RootLayout({
@@ -21,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <body>
         <ReactQueryProvider>
           <ClusterProvider>

@@ -26,7 +26,22 @@ export function UiLayout({
 
   return (
     <div className="h-full flex flex-col">
-      <div className="navbar bg-base-300 text-neutral-content flex-col md:flex-row space-y-2 md:space-y-0">
+      <header className='absolute top-0 w-full bg-black flex flex-row border-b-2 border-black'>
+        <div className='relative w-full h-auto py-0.5 rounded-t-xl bg-white'>
+         {links.map(({ label, path }) => (
+                <Link
+                  key={path}
+                  className="my-1 ml-5 text-black bg-white hover:bg-black hover:text-white"
+                  href={path}
+                >
+                  {label}
+                </Link>
+  
+            ))}
+        </div>    
+
+      </header>
+      {/* <div className="navbar bg-base-300 text-neutral-content flex-col md:flex-row space-y-2 md:space-y-0">
         <div className="flex-1">
           <Link className="btn btn-ghost normal-case text-xl" href="/">
             <img
@@ -55,7 +70,7 @@ export function UiLayout({
       </div>
       <ClusterChecker>
         <AccountChecker />
-      </ClusterChecker>
+      </ClusterChecker> */}
       <div className="flex-grow mx-4 lg:mx-auto">
         <Suspense
           fallback={
@@ -151,7 +166,7 @@ export function AppHero({
   subtitle: ReactNode;
 }) {
   return (
-    <div className="hero py-[64px]">
+    <div className="hero py-5 pt-[64px]">
       <div className="hero-content text-center">
         <div className="max-w-2xl">
           {typeof title === 'string' ? (

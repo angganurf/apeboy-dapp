@@ -1,5 +1,8 @@
 'use client';
 
+import Link from 'next/link';
+import TitleBar from '../TitleBar';
+import { WalletButton } from '../solana/solana-provider';
 import { AppHero } from '../ui/ui-layout';
 
 const links: { label: string; href: string }[] = [
@@ -17,23 +20,29 @@ export default function DashboardFeature() {
   return (
     <div>
       <AppHero title="gm" subtitle="Say hi to your new Solana dApp." />
-      <div className="max-w-xl mx-auto py-6 sm:px-6 lg:px-8 text-center">
-        <div className="space-y-2">
-          <p>Here are some helpful links to get you started.</p>
-          {links.map((link, index) => (
-            <div key={index}>
-              <a
-                href={link.href}
-                className="link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {link.label}
-              </a>
+      <div className="max-w-xl mx-auto py-1 text-center center">
+          <div className='w-full flex flex-row justify-center'>
+            <img src='/logo.png' width={100} />
+          </div>
+          <div className='mx-auto w-[400px] h-[350px] border-2 border-black rounded-sm bg-white px-1'>
+            <div className='flex flex-row justify-between relative w-full h-[25px] border-b-2 border-black'>
+              <TitleBar />
+               <div className='flex justify-center flex-col'>apeboy</div>
+              <TitleBar />
+
             </div>
-          ))}
-        </div>
+            <div className='relative w-full flex justify-center items-center h-[324px] flex-row'>
+              <div>
+                  <div className='flex flex-col justify-center items-center gap-[40px]'>
+                    <Link className="text-white bg-black px-2 my-1" href={"/leaderboard"}>presale leaderboard</Link>
+                    <WalletButton className='bg-white text-black'/>
+                  </div>
+              </div>
+               
+            </div>
+          </div>
       </div>
+
     </div>
   );
 }
