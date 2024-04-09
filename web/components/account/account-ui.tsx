@@ -319,7 +319,9 @@ export function AccountTransactions({ address }: { address: PublicKey }) {
 
 function BalanceSol({ balance }: { balance: number }) {
   return (
-    <span>{Math.round((balance / LAMPORTS_PER_SOL) * 100000) / 100000}</span>
+    <p className="text-sm">
+      my bal : {Math.round((balance / LAMPORTS_PER_SOL) * 100000) / 100000}
+    </p>
   );
 }
 

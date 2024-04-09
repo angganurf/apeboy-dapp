@@ -12,6 +12,11 @@ import TitleBar from '../TitleBar';
 import { WalletButton } from '../solana/solana-provider';
 import { useWallet } from '@solana/wallet-adapter-react';
 import CopyText from '../CopyText';
+import InputSol from '../InputValue';
+import { BuyButton } from '../BuyButton';
+import { AccountBalance } from '../account/account-ui';
+import { MyBalance } from '../MyBalance';
+import { Tokenomics } from '../Tokenomics';
 
 export default function DashboardDetailFeature() {
   const { publicKey } = useWallet();
@@ -32,12 +37,12 @@ export default function DashboardDetailFeature() {
 
   return (
     <div>
-      <AppHero title="gm" subtitle="Say hi to your new Solana dApp." />
+      <AppHero title="gm" subtitle="Say hi to apeboy." />
       <div className="max-w-xl mx-auto py-1 text-center center">
-        <div className="w-full flex flex-row justify-center">
+        <div className="w-full flex flex-row justify-center mb-5">
           <img src="/logo.png" width={100} />
         </div>
-        <div className="mx-auto w-[400px] h-[350px] border-2 border-black rounded-sm bg-white px-1">
+        <div className="mx-auto w-[400px] h-auto mb-3 pb-3 border-2 border-black rounded-sm bg-white px-1">
           <div className="flex flex-row justify-between relative w-full h-[25px] border-b-2 border-black">
             <TitleBar />
             <div className="flex justify-center flex-col">apeboy</div>
@@ -59,11 +64,16 @@ export default function DashboardDetailFeature() {
                     <span className="tooltiptext">copy</span>
                   </span>
                 </div>
+                <div className="pb-1 px-[40px] text-center break-all text-[15px]">
+                  <InputSol address={new PublicKey(params.address)} />
+                </div>
                 <WalletButton className="bg-white text-black" />
+                <MyBalance address={address} />
               </div>
             </div>
           </div>
         </div>
+        <Tokenomics />
       </div>
     </div>
   );

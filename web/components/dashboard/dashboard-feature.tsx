@@ -4,13 +4,14 @@ import Link from 'next/link';
 import TitleBar from '../TitleBar';
 import { WalletButton } from '../solana/solana-provider';
 import { AppHero } from '../ui/ui-layout';
+import { Tokenomics } from '../Tokenomics';
 
 export default function DashboardFeature() {
   return (
     <div>
-      <AppHero title="gm" subtitle="Say hi to your new Solana dApp." />
+      <AppHero title="gm" subtitle="Say hi to apeboy." />
       <div className="max-w-xl mx-auto py-1 text-center center">
-        <div className="w-full flex flex-row justify-center">
+        <div className="w-full flex flex-row justify-center mb-5">
           <img src="/logo.png" width={100} />
         </div>
         <div className="mx-auto w-[400px] h-[350px] border-2 border-black rounded-sm bg-white px-1">
@@ -33,6 +34,7 @@ export default function DashboardFeature() {
             </div>
           </div>
         </div>
+        <Tokenomics />
       </div>
     </div>
   );
