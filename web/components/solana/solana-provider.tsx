@@ -14,7 +14,7 @@ import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { ReactNode, useCallback, useMemo } from 'react';
 import { useCluster } from '../cluster/cluster-data-access';
 
-require('@solana/wallet-adapter-react-ui');
+require('@solana/wallet-adapter-react-ui/styles.css');
 
 export const WalletButton = dynamic(
   async () =>
