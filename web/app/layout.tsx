@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const links: { label: string; path: string }[] = [
-  { label: 'home', path: '/' },
+  // { label: 'home', path: '/' },
   {
     label: '$apeboy',
     path: 'https://solscan.io/token/Gz8758urhVJfaZFbuGy2rgYSxbkf6qFUodEk9eY9SgUa',
